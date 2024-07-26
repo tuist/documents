@@ -12,7 +12,8 @@ kill_timeout = '30s'
   NEXT_PUBLIC_WEBAPP_URL="https://documents.tuist.io"
   NEXTAUTH_URL="https://documents.tuist.io"
   PORT="8080"
-
+  NEXT_PRIVATE_SMTP_TRANSPORT="smtp-auth"
+  
 [experimental]
   cmd = ['node', 'apps/web/server.js', '-p', '$PORT']
 
