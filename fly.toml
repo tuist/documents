@@ -13,7 +13,7 @@ kill_timeout = '30s'
   NEXTAUTH_URL="https://documents.tuist.io"
   PORT="8080"
   NEXT_PRIVATE_SMTP_TRANSPORT="smtp-auth"
-  NEXT_PRIVATE_SMTP_PORT="465"
+  NEXT_PRIVATE_SMTP_PORT="587"
   NEXT_PRIVATE_SMTP_FROM_NAME="Tuist Documents"
   NEXT_PUBLIC_UPLOAD_TRANSPORT="s3"
 
@@ -61,7 +61,7 @@ kill_timeout = '30s'
     grace_period = '1s'
 
 [[vm]]
-  memory = '1gb'
+  memory = '4gb'
   cpu_kind = 'shared'
   cpus = 1
 
