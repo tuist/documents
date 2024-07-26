@@ -13,7 +13,10 @@ kill_timeout = '30s'
   NEXTAUTH_URL="https://documents.tuist.io"
   PORT="8080"
   NEXT_PRIVATE_SMTP_TRANSPORT="smtp-auth"
-  
+  NEXT_PRIVATE_SMTP_PORT="465"
+  NEXT_PRIVATE_SMTP_FROM_NAME="Tuist Documents"
+  NEXT_PUBLIC_UPLOAD_TRANSPORT="s3"
+
 [experimental]
   cmd = ['node', 'apps/web/server.js', '-p', '$PORT']
 
@@ -26,7 +29,7 @@ kill_timeout = '30s'
 [[services]]
   protocol = 'tcp'
   internal_port = 8080
-  auto_stop_machines = false
+  auto_stop_machines = true
   auto_start_machines = true
   min_machines_running = 1
 
@@ -46,16 +49,6 @@ kill_timeout = '30s'
           Strict-Transport-Security = 'max-age=63072000; includeSubDomains'
           X-Content-Type-Options = 'nosniff'
           X-Frame-Options = 'SAMEORIGIN'
-
-  [[services.http_checks]]
-    interval = 10000
-    grace_period = "10s"
-    method = "get"
-    path = "/"
-    protocol = "http"
-    timeout = 2000
-    tls_skip_verify = false
-    [services.http_checks.headers]
 
   [services.concurrency]
     type = 'connections'
