@@ -1,0 +1,12 @@
+# flyctl launch added from .gitignore
+# VSCode
+**/.vscode
+**/**/*.code-workspace
+
+# Dev environment
+**/.prettierignore
+**/.prettierrc.js
+
+# macOS-specific files
+**/.DS_Store
+fly.toml
