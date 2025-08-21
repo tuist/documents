@@ -28,6 +28,6 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v3
-      - uses: jdx/mise-action@v2
+      - uses: jdx/mise-action@v3
       - name: Fly
         run: flyctl deploy --remote-only -c fly.toml --wait-timeout 3600
